@@ -10,9 +10,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using DotNetCoreSqlDb.Models;
+using Circles_MVC.Models;
+using Microsoft.AspNetCore.Identity;
 
-namespace DotNetCoreSqlDb
+namespace Circles_MVC
 {
     public class Startup
     {
@@ -36,7 +37,7 @@ namespace DotNetCoreSqlDb
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<MyDatabaseContext>(options =>
+            services.AddDbContext<Circles_MVCContext>(options =>
                     options.UseSqlite("Data Source=localdatabase.db"));
 
                     services.AddEntityFrameworkMySql()
