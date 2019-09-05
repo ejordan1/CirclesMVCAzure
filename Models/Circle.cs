@@ -21,7 +21,8 @@ namespace Circles_MVC.Models
 
         public static List<Circle> GetAllCircles()
         {
-            var client = new RestClient("http://circles100webapp.azurewebsites.net/api/");
+            //http://circlesapitwoapp.azurewebsites.net/
+            var client = new RestClient("http://circlesapitwoapp.azurewebsites.net/api/");
             var request = new RestRequest("circles", Method.GET);
             var response = new RestResponse();
 
@@ -38,7 +39,7 @@ namespace Circles_MVC.Models
         // Display next page of circles
         // public static List<Circle> GetNextCircles()
         // {
-        //     var client = new RestClient("http://circles100webapp.azurewebsites.net/api/");
+        //     var client = new RestClient("http://circlesapitwoapp.azurewebsites.net/api/");
         //     var request = new RestRequest("circles/next", Method.GET);
         //     var response = new RestResponse();
 
@@ -55,7 +56,7 @@ namespace Circles_MVC.Models
         // // Display prev page of circles
         // public static List<Circle> GetPrevCircles()
         // {
-        //     var client = new RestClient("http://circles100webapp.azurewebsites.net/api/");
+        //     var client = new RestClient("http://circlesapitwoapp.azurewebsites.net/api/");
         //     var request = new RestRequest("circles/prev", Method.GET);
         //     var response = new RestResponse();
 
@@ -72,7 +73,7 @@ namespace Circles_MVC.Models
         // Display particular circle 
         public static Circle GetThisCircle(int id)
         {
-            var client = new RestClient("http://circles100webapp.azurewebsites.net/api/");
+            var client = new RestClient("http://circlesapitwoapp.azurewebsites.net/api/");
             var request = new RestRequest("circles/" + id, Method.GET);
             var response = new RestResponse();
 
@@ -89,7 +90,7 @@ namespace Circles_MVC.Models
         // Add new Circle
         public static void CreateCircle(Circle circle)
         {
-            var client = new RestClient("http://circles100webapp.azurewebsites.net/api/");
+            var client = new RestClient("http://circlesapitwoapp.azurewebsites.net/api/");
             var request = new RestRequest("circles", Method.POST);
             request.AddJsonBody(circle);
             var response = new RestResponse();
@@ -103,7 +104,7 @@ namespace Circles_MVC.Models
         // Delete particular Circle
         public static void DeleteCircle(int id)
         {
-            var client = new RestClient("http://circles100webapp.azurewebsites.net/api/");
+            var client = new RestClient("http://circlesapitwoapp.azurewebsites.net/api/");
             var request = new RestRequest("circles/" + id, Method.DELETE);
             var response = new RestResponse();
 
@@ -116,7 +117,7 @@ namespace Circles_MVC.Models
         // Editing a particular Circle
         public static void EditCircle(int id, Circle circle)
         {
-            var client = new RestClient("http://circles100webapp.azurewebsites.net/api/");
+            var client = new RestClient("http://circlesapitwoapp.azurewebsites.net/api/");
             var request = new RestRequest("circles/" + id, Method.PUT);
             request.AddJsonBody(circle);
             var response = new RestResponse();
@@ -130,7 +131,7 @@ namespace Circles_MVC.Models
         // Add another user to your circle
         public static void AddUser(int circleId, int userprofileId)
         {
-            var client = new RestClient("http://circles100webapp.azurewebsites.net/api/");
+            var client = new RestClient("http://circlesapitwoapp.azurewebsites.net/api/");
             var request = new RestRequest("circles/" + circleId + "/userprofiles/" + userprofileId, Method.POST);
             var response = new RestResponse();
 
@@ -144,7 +145,7 @@ namespace Circles_MVC.Models
         public static void RemoveUser(int id)
         {
             Console.WriteLine("ID IN REMOVE USER in api call  IS: " + id);
-            var client = new RestClient("http://circles100webapp.azurewebsites.net/api/");
+            var client = new RestClient("http://circlesapitwoapp.azurewebsites.net/api/");
             var request = new RestRequest("circleuserprofiles/" + id, Method.DELETE);
             var response = new RestResponse();
 

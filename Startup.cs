@@ -47,6 +47,7 @@ namespace Circles_MVC
                 services.AddDbContext<Circles_MVCContext>(options =>
                         options.UseSqlite("Data Source=localdatabase.db"));
 
+            //LINE FROM TUTORIAL: BREAKS IT --------------
             // Automatically perform database migration
             // services.BuildServiceProvider().GetService<Circles_MVCContext>().Database.Migrate();
 
