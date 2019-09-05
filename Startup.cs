@@ -50,9 +50,9 @@ namespace Circles_MVC
             // Automatically perform database migration
             services.BuildServiceProvider().GetService<Circles_MVCContext>().Database.Migrate();
 
-            //     services.AddEntityFrameworkMySql()
-            // .AddDbContext<Circles_MVCContext>(options => options
-            // .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
+                services.AddEntityFrameworkMySql()
+            .AddDbContext<Circles_MVCContext>(options => options
+            .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<Circles_MVCContext>()
