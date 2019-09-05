@@ -37,12 +37,22 @@ namespace Circles_MVC
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<Circles_MVCContext>(options =>
-                    options.UseSqlite("Data Source=localdatabase.db"));
 
-                    services.AddEntityFrameworkMySql()
-                .AddDbContext<Circles_MVCContext>(options => options
-                .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
+
+            // Use SQL Database if in Azure, otherwise, use SQLite
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+                services.AddDbContext<Circles_MVCContext>(options =>
+                        options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+            else
+                services.AddDbContext<Circles_MVCContext>(options =>
+                        options.UseSqlite("Data Source=localdatabase.db"));
+
+            // Automatically perform database migration
+            services.BuildServiceProvider().GetService<Circles_MVCContext>().Database.Migrate();
+
+            //     services.AddEntityFrameworkMySql()
+            // .AddDbContext<Circles_MVCContext>(options => options
+            // .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<Circles_MVCContext>()

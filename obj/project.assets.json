@@ -13447,11 +13447,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Guest/Desktop/CirclesMVCAzure/Circles_MVC.csproj",
+      "projectUniqueName": "/Users/Guest/Desktop/circlesapp/Circles_MVC.csproj",
       "projectName": "Circles_MVC",
-      "projectPath": "/Users/Guest/Desktop/CirclesMVCAzure/Circles_MVC.csproj",
+      "projectPath": "/Users/Guest/Desktop/circlesapp/Circles_MVC.csproj",
       "packagesPath": "/Users/Guest/.nuget/packages/",
-      "outputPath": "/Users/Guest/Desktop/CirclesMVCAzure/obj/",
+      "outputPath": "/Users/Guest/Desktop/circlesapp/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
